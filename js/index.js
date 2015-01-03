@@ -6,17 +6,30 @@ var $slot = $(".slot");
 var $packery;
 var bikeInfo;
 
-$( function()
+$(function()
 {
   //Make Draggabilly work with scaling
   Draggabilly.prototype.positionDrag = Draggabilly.prototype.setLeftTop;
 
   //Parse bikeinfo JSON into bikeInfo object
-  $.getJSON("/CycleFitness/json/bikeinfo.json", function(data) {
+  var succeeded = false;
+  $.getJSON("../json/bikeinfo.json", function(data) {
     console.log(data);
     bikeInfo = data;
+    succeeded = true;
     initPackery();
   });
+
+  if(!succeeded)
+  {
+    $.getJSON("/CycleFitness/json/bikeinfo.json", function(data) {
+      console.log(data);
+      bikeInfo = data;
+      succeeded = true;
+      initPackery();
+    });
+  }
+
 
 });
 
