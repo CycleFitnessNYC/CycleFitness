@@ -75,7 +75,10 @@ function testRects(r1, r2)
 //Set image for a given card div
 function setImage(elem, bikeInfo)
 {
-  elem.style.content = "url(" + bikeInfo.bikes[parseInt(elem.id)].image + ")";
+  elem.style.backgroundImage = "url(" + bikeInfo.bikes[parseInt(elem.id)].image + ")";
+  elem.style.backgroundSize = "100%";
+  elem.style.backgroundRepeat = "no-repeat";
+  elem.style.backgroundPosition = "center center";
 }
 
 //Make an element into a Draggability object
