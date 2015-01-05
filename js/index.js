@@ -33,6 +33,7 @@ $(function()
 
 });
 
+//Initialize Packery and all the cards within
 function initPackery()
 {
   var index = 0;
@@ -59,6 +60,7 @@ function initPackery()
 
 }
 
+//Initialize a card by binding events, setting image, etc
 function initCard(itemElem)
 {
   setImage(itemElem, bikeInfo);

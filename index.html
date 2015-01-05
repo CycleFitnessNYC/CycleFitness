@@ -7,6 +7,7 @@
   <title>Packery - Draggabilly</title>
   <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
   <link rel="stylesheet" href="css/cards.css" media="screen" type="text/css" />
+  <link rel="stylesheet" href="css/switch.css" media="screen" type="text/css" />
 
 </head>
 
@@ -15,7 +16,15 @@
   <h1>CycleFitness Demo: Packery w/ Draggabilly</h1>
   <div class="row">
     <div class="packery"></div>
+
     <div class="info">
+      <div class="switch">
+        <input type="radio" class="switch-input" name="view" value="single" id="single" checked>
+        <label for="single" class="switch-label switch-label-off">Single</label>
+        <input type="radio" class="switch-input" name="view" value="compare" id="compare">
+        <label for="compare" class="switch-label switch-label-on">Compare</label>
+        <span class="switch-selection"></span>
+      </div>
       <div class="slot"></div>
       <div class="slot"></div>
     </div>

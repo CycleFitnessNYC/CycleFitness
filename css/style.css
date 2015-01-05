@@ -44,4 +44,16 @@ body
   inset 0px 1px 1px rgba(0,0,0,0.5); /*top internal highlight*/
 }
 
+.info
+{
+  border-radius: 10px;
+  /*border: 2px solid #333;*/
+  float: right;
+  display: inline;
+  box-shadow:
+  inset 0px -1px 1px rgba(255,255,255,0.8), /*bottom internal shadow*/
+  inset 0px 1px 1px rgba(0,0,0,0.5); /*top internal highlight*/
+
+}
+
 
