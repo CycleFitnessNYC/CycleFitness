@@ -144,22 +144,11 @@ function makeDraggabilly(itemElem)
   {
     itemElem.classList.add("post-post-drag");
 
-    //Check for each packery (although there should only be 1)
-    $(".packery").each(function(i, packeryElem)
+    if (testRects($(".packery")[0].getBoundingClientRect(), itemElem.getBoundingClientRect()))
     {
-      if (testRects(packeryElem.getBoundingClientRect(), itemElem.getBoundingClientRect()))
-      {
-        //Remove card from the slot
-        itemElem.remove();
-
-        //Add identical card to the packery
-        var cardElem = $.parseHTML('<div class="card" id="' + itemElem.id + '"></div>')[0];
-        $packery.append(cardElem);
-        $packery.packery("appended", cardElem);
-        initCard(cardElem);
-        return;
-      }
-    });
+      replaceCard(itemElem);
+      return;
+    }
 
     //Get slot with largest overlap area
     var slotEntered;
@@ -213,4 +202,16 @@ function makeDraggabilly(itemElem)
 
   // bind Draggabilly events to Packery
   $packery.packery('bindDraggabillyEvents', draggie);
+}
+
+function replaceCard(itemElem)
+{
+  //Remove card from the slot
+  itemElem.remove();
+
+  //Add identical card to the packery
+  var cardElem = $.parseHTML('<div class="card" id="' + itemElem.id + '"></div>')[0];
+  $packery.append(cardElem);
+  $packery.packery("appended", cardElem);
+  initCard(cardElem);
 }

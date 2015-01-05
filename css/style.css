@@ -14,9 +14,7 @@ body
 .packery
 {
   background: hsla(159, 58%, 51%, 0.20);
-  float: left;
   margin: 10px;
-  width: 480px;
   border-radius: 10px;
   box-shadow:
   inset 0px -1px 1px rgba(255,255,255,0.8), /*bottom internal shadow*/
@@ -34,7 +32,7 @@ body
 .slot
 {
   margin: 10px;
-  float: right;
+  transition: width .4s ease;
   width: 160px;
   height: 160px;
   background: hsla(159, 58%, 51%, 0.20);
@@ -44,16 +42,50 @@ body
   inset 0px 1px 1px rgba(0,0,0,0.5); /*top internal highlight*/
 }
 
+#s1
+{
+  float: right;
+}
+
+#s2
+{
+  float:left;
+}
+
 .info
 {
+  display: flex;
   border-radius: 10px;
-  /*border: 2px solid #333;*/
-  float: right;
-  display: inline;
+  margin: 10px;
   box-shadow:
   inset 0px -1px 1px rgba(255,255,255,0.8), /*bottom internal shadow*/
   inset 0px 1px 1px rgba(0,0,0,0.5); /*top internal highlight*/
-
 }
 
+.subinfo
+{
+  border-radius: 10px;
+  width: 50%;
+  transition: width .5s ease;
+  box-shadow:
+  inset 0px -1px 1px rgba(255,255,255,0.8), /*bottom internal shadow*/
+  inset 0px 1px 1px rgba(0,0,0,0.5); /*top internal highlight*/
+}
 
+#left-column
+{
+  float: left;
+  width: 500px;
+  margin-left: -100%;
+}
+
+#content-wrapper
+{
+  float: left;
+  width: 100%;
+}
+
+#content-column
+{
+  margin-left: 500px;
+}
