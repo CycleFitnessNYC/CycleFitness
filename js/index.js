@@ -37,34 +37,58 @@ $(function()
       currentType = bikeTypes.ELECTRIC;
     });
   }
+});
 
-
+$("button").click(function()
+{
+  initPackery(1);
 });
 
 //Initialize Packery and all the cards within
 function initPackery(bikeType)
 {
   var index = 0;
-  //Create bike cards from JSON
-  bikeInfo.bikes[bikeType].forEach(function(bike)
-  {
-    $(".packery").append('<div class="card" id="' + index.toString() + '"></div>');
-    index++;
-  });
+  var wait = 0;
+  currentType = bikeType;
 
-  //Init packery object
-  $packery = $(".packery").packery(
-      {
-        columnWidth: 160,
-        rowHeight: 160
-      });
-
-  //Init cards
-  var cardIndex = 0;
-  $packery.find('.card').each(function (i, itemElem)
+  //Remove existing bikes if they exist
+  if ($(".packery").children().length > 0)
   {
-    initCard(itemElem)
-  });
+    $(".packery").children().each(function(i, itemElem)
+    {
+      $packery.packery("remove", itemElem);
+    });
+    wait = 500;
+  }
+
+  setTimeout(function()
+  {
+    //Create bike cards from JSON
+    bikeInfo.bikes[bikeType].forEach(function(bike)
+    {
+      $(".packery").append('<div class="card" id="' + index.toString() + '"></div>');
+      index++;
+    });
+
+    //Init packery object
+    if ($packery != null)
+    {
+      $packery.packery("destroy");
+    }
+    $packery = $(".packery").packery(
+        {
+          columnWidth: 160,
+          rowHeight: 160
+        });
+
+    //Init cards
+    var cardIndex = 0;
+    $packery.find('.card').each(function (i, itemElem)
+    {
+      initCard(itemElem)
+    });
+  }, wait);
+
 
 }
 
@@ -107,13 +131,13 @@ function setImage(elem)
 //Make an element into a Draggability object
 function makeDraggabilly(itemElem)
 {
+
   // make element draggable with Draggabilly
   var draggie = new Draggabilly(itemElem);
 
   var dragEndUnslotted = function(draggie, event, pointer)
   {
     itemElem.classList.add("post-post-drag");
-
     //Get slot with largest overlap area
     var slotEntered;
     var maxOverlap = 0;
@@ -134,6 +158,7 @@ function makeDraggabilly(itemElem)
 
     if (slotEntered)
     {
+        draggie.disable();
         placeCard(slotEntered, itemElem);
     }
   }
@@ -172,8 +197,12 @@ function makeDraggabilly(itemElem)
     {
       if (slotEntered.children.length == 0)  //Is the slot empty?
       {
+        var subinfoElem = itemElem.parentNode.parentNode;
+
         //Reset text
-        setInformation(itemElem.parentNode.parentNode, -1);
+        setInformation(subinfoElem, -1);
+
+        collapseSubinfo(subinfoElem);
 
         //Remove card from the slot
         itemElem.remove();
@@ -212,7 +241,12 @@ function placeCard(slotEntered, itemElem)
     $(slotEntered).append('<div class="card slotted" id="' + itemElem.id + '"></div>');
 
     //Set the text
-    setInformation(slotEntered.parentNode, parseInt(itemElem.id));
+    var subinfoElem = slotEntered.parentNode;
+
+    //Bike name
+    setInformation(subinfoElem, parseInt(itemElem.id));
+
+    expandSubinfo(subinfoElem);
 
     var cardElem = slotEntered.childNodes[0];
     initCard(cardElem);
@@ -220,11 +254,14 @@ function placeCard(slotEntered, itemElem)
 }
 function replaceCard(itemElem)
 {
+  var subinfoElem = itemElem.parentNode.parentNode;
   //Reset text
-  setInformation(itemElem.parentNode.parentNode, -1);
+  setInformation(subinfoElem, -1);
 
   //Remove card from the slot
   itemElem.remove();
+
+  collapseSubinfo(subinfoElem);
 
   //Add identical card to the packery
   var cardElem = $.parseHTML('<div class="card" id="' + itemElem.id + '"></div>')[0];
@@ -245,6 +282,18 @@ function setInformation(subinfoElem, bikeIndex)
   {
     $name.text(getBike(currentType, bikeIndex).name);
   }
+}
+
+function expandSubinfo(subinfoElem)
+{
+  subinfoElem.style.maxHeight = "640px";
+  subinfoElem.style.height = "640px";
+}
+
+function collapseSubinfo(subinfoElem)
+{
+  subinfoElem.style.maxHeight = "180px";
+  subinfoElem.style.height = "180px";
 }
 
 function getBike(bikeType, index)

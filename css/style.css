@@ -32,11 +32,12 @@ body
 .packery
 {
   background: hsla(159, 58%, 51%, 0.20);
-  margin: 10px;
+  border: solid 1px #666666;
+  margin: 9px;
   border-radius: 10px;
   box-shadow:
-  inset 0px -1px 1px rgba(255,255,255,0.8), /*bottom internal shadow*/
-  inset 0px 1px 1px rgba(0,0,0,0.5); /*top internal highlight*/
+  inset 0px -1px 5px rgba(255,255,255,0.8), /*bottom internal shadow*/
+  inset 0px 1px 5px rgba(0,0,0,0.5); /*top internal highlight*/
 }
 
 /* clearfix */
@@ -55,9 +56,10 @@ body
   height: 160px;
   background: hsla(159, 58%, 51%, 0.20);
   border-radius: 10px;
+  border: solid 1px #666666;
   box-shadow:
-  inset 0px -1px 1px rgba(255,255,255,0.8), /*bottom internal shadow*/
-  inset 0px 1px 1px rgba(0,0,0,0.5); /*top internal highlight*/
+  inset 0px -1px 5px rgba(255,255,255,0.8), /*bottom internal shadow*/
+  inset 0px 1px 5px rgba(0,0,0,0.5); /*top internal highlight*/
 }
 
 #s1
@@ -72,6 +74,9 @@ body
 
 .left
 {
+  -o-transition: width .4s ease;
+  -moz-transition: width .4s ease;
+  -webkit-transition: width .4s ease;
   transition: width .4s ease;
   float: right;
 }
@@ -94,13 +99,17 @@ body
 .subinfo
 {
   border-radius: 10px;
+  border: solid 1px #666666;
   width: 50%;
   height: 100%;
   max-height: 180px;
-  transition: width .5s ease;
+  -o-transition: width .5s ease, height .5s ease;
+  -moz-transition: width .5s ease, height .5s ease;
+  -webkit-transition: width .5s ease, height .5s ease;
+  transition: width .5s ease, height .5s ease;
   box-shadow:
-  inset 0px -1px 1px rgba(255,255,255,0.8), /*bottom internal shadow*/
-  inset 0px 1px 1px rgba(0,0,0,0.5); /*top internal highlight*/
+  inset 0px -1px 5px rgba(255,255,255,0.8), /*bottom internal highlight*/
+  inset 0px 1px 5px rgba(0,0,0,0.5); /*top internal shadow*/
 }
 
 .subinfo.left
@@ -111,6 +120,7 @@ body
 .name-table
 {
   height: 180px;
+  max-width: 60%;
   display: table;
 }
 

@@ -3,6 +3,7 @@ $("#compare").click(function()
     $(".left:not(.info-prop)").each(function(i, itemElem)
     {
         itemElem.style.width = itemElem.style.maxWidth;
+        itemElem.style.borderStyle = "solid";
     });
 
     $(".info-prop.left").each(function(i, itemElem)
@@ -27,6 +28,11 @@ $("#single").click(function()
     $(".left:not(.info-prop)").each(function(i, itemElem)
     {
         itemElem.style.width = "0%";
+
+        setTimeout(function ()
+        {
+            itemElem.style.borderStyle = "none";
+        }, 400);
     });
 
     $(".info-prop.left").each(function(i, itemElem)
