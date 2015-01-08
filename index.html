@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Bike Comparer</title>
+  <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+  <link rel="stylesheet" href="css/cards.css" media="screen" type="text/css" />
+  <link rel="stylesheet" href="css/switch.css" media="screen" type="text/css" />
+
+</head>
+
+<body>
+  <div class="row" id="title">
+    <h1 style="text-align: center">BIKE COMPARER</h1>
+  </div>
+  <div class="row" id="content">
+    <div id="content-wrapper">
+      <div id="content-column">
+        <div class="info">
+          <div class="subinfo left" id="si1">
+            <div class="slot left" id="s1"></div>
+            <div class="info-prop name-table left" id="name1">
+              <div class="info-prop name">
+                <div>Drag bike here</div>
+              </div>
+            </div>
+          </div>
+          <div class="subinfo" id="si2">
+            <div class="slot right" id="s2"></div>
+            <div class="info-prop name-table right" id="name2">
+              <div class="info-prop name">
+                <div>Drag bike here</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="switch">
+          <input type="radio" class="switch-input" name="view" value="single" id="single">
+          <label for="single" class="switch-label switch-label-off noselect">Single</label>
+          <input type="radio" class="switch-input" name="view" value="compare" id="compare" checked>
+          <label for="compare" class="switch-label switch-label-on noselect">Compare</label>
+          <span class="switch-selection"></span>
+        </div>
+      </div>
+    </div>
+    <div id="left-column">
+      <div class="packery"></div>
+    </div>
+  </div>
+
+  <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
+  <script src='js/packery.pkgd.js'></script>
+  <script src='js/draggabilly.pkgd.js'></script>
+  <script src="js/switch.js"></script>
+  <script src="js/index.js"></script>
+
+</body>
+
+</html>
