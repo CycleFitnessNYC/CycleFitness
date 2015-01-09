@@ -7,8 +7,11 @@
 
 body
 {
-  font-family: sans-serif;
-  background-color: #e0f4f4;
+  background: url(../img/pearl-background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 #left-column
@@ -31,9 +34,10 @@ body
 
 .packery
 {
-  background: hsla(159, 58%, 51%, 0.20);
+  background: hsla(355, 65%, 74%, 0.20);
   border: solid 1px #666666;
   margin: 9px;
+
   border-radius: 10px;
   box-shadow:
   inset 0px -1px 5px rgba(255,255,255,0.8), /*bottom internal shadow*/
@@ -54,7 +58,7 @@ body
   width: 160px;
   max-width: 160px;
   height: 160px;
-  background: hsla(159, 58%, 51%, 0.20);
+  background: hsla(355, 65%, 74%, 0.20);
   border-radius: 10px;
   border: solid 1px #666666;
   box-shadow:
@@ -130,4 +134,9 @@ body
   height: 180px;
   font-size: xx-large;
   vertical-align: middle;
+}
+
+.bike-info
+{
+  float: left;
 }

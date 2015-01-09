@@ -25,7 +25,7 @@ $("#single").click(function()
     if (itemElem)
         replaceCard(itemElem);
 
-    $(".left:not(.info-prop)").each(function(i, itemElem)
+    $(".container.left").each(function(i, itemElem)
     {
         itemElem.style.width = "0%";
 

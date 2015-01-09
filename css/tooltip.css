@@ -1,0 +1,37 @@
+.tooltip {outline:none; }
+/*.tooltip strong {line-height:30px;}*/
+.tooltip:hover {text-decoration:none;}
+.tooltip span
+{
+    z-index: 10;
+    display: none;
+    padding: 14px 20px;
+    height: 30px;
+    margin-top: 65px;
+    margin-left: 160px;
+    line-height: 2px;
+    white-space: nowrap;
+}
+.tooltip:hover span
+{
+    display: inline-block;
+    position: absolute;
+    background: hsla(1, 56%, 80%, 0.80);
+    border: 1px solid #cb0a08;
+}
+
+.callout
+{
+    z-index:20;
+    position:absolute;
+    border:0;
+    top: 2px;
+    left:-12px;
+}
+
+/*CSS3 extras*/
+.tooltip span
+{
+    border-radius:4px;
+    box-shadow: 5px 5px 8px #CCC;
+}

@@ -66,7 +66,7 @@ function initPackery(bikeType)
     //Create bike cards from JSON
     bikeInfo.bikes[bikeType].forEach(function(bike)
     {
-      $(".packery").append('<div class="card" id="' + index.toString() + '"></div>');
+      $(".packery").append(getBikeString(index));
       index++;
     });
 
@@ -88,8 +88,11 @@ function initPackery(bikeType)
       initCard(itemElem)
     });
   }, wait);
+}
 
-
+function getBikeString(id, slotted)
+{
+  return '<div class="card' + (slotted ? " slotted" : " tooltip") + '" id="' + id.toString() + '">' + (!slotted ? '<span> <img class="callout" src="img/callout.gif" /> <strong>' + getBike(currentType, id).name + '</strong></span>' : '') + '</div>'
 }
 
 //Initialize a card by binding events, setting image, etc
@@ -197,7 +200,7 @@ function makeDraggabilly(itemElem)
     {
       if (slotEntered.children.length == 0)  //Is the slot empty?
       {
-        var subinfoElem = itemElem.parentNode.parentNode;
+        var subinfoElem = itemElem.parentNode.parentNode.parentNode;
 
         //Reset text
         setInformation(subinfoElem, -1);
@@ -238,10 +241,10 @@ function placeCard(slotEntered, itemElem)
     $packery.packery("remove", itemElem);
 
     //Add identical card to the slot
-    $(slotEntered).append('<div class="card slotted" id="' + itemElem.id + '"></div>');
+    $(slotEntered).append(getBikeString(itemElem.id, true));
 
     //Set the text
-    var subinfoElem = slotEntered.parentNode;
+    var subinfoElem = slotEntered.parentNode.parentNode;
 
     //Bike name
     setInformation(subinfoElem, parseInt(itemElem.id));
@@ -254,7 +257,7 @@ function placeCard(slotEntered, itemElem)
 }
 function replaceCard(itemElem)
 {
-  var subinfoElem = itemElem.parentNode.parentNode;
+  var subinfoElem = (itemElem.parentNode.parentNode.parentNode);
   //Reset text
   setInformation(subinfoElem, -1);
 
@@ -264,7 +267,7 @@ function replaceCard(itemElem)
   collapseSubinfo(subinfoElem);
 
   //Add identical card to the packery
-  var cardElem = $.parseHTML('<div class="card" id="' + itemElem.id + '"></div>')[0];
+  var cardElem = $.parseHTML(getBikeString(itemElem.id))[0];
   $packery.append(cardElem);
   $packery.packery("appended", cardElem);
   initCard(cardElem);
@@ -286,6 +289,10 @@ function setInformation(subinfoElem, bikeIndex)
 
 function expandSubinfo(subinfoElem)
 {
+  $(".bike-info.left").each(function(itemElem)
+  {
+    itemElem.visibility = "visible";
+  });
   subinfoElem.style.maxHeight = "640px";
   subinfoElem.style.height = "640px";
 }
