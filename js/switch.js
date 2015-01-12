@@ -1,12 +1,20 @@
+$(function()
+{
+    $(".subinfo.left")[0].style.width = "0%";
+    $(".slot.left")[0].style.width = "0%";
+    $(".name-table.left")[0].style.visibility = "hidden";
+})
+
 $("#compare").click(function()
 {
-    $(".left:not(.info-prop)").each(function(i, itemElem)
+    $(".container.left").each(function(i, itemElem)
     {
+        console.log("mwidth: " + itemElem.style.maxWidth);
         itemElem.style.width = itemElem.style.maxWidth;
         itemElem.style.borderStyle = "solid";
     });
 
-    $(".info-prop.left").each(function(i, itemElem)
+    $(".name-table.left").each(function(i, itemElem)
     {
         setTimeout(function ()
         {
@@ -35,7 +43,7 @@ $("#single").click(function()
         }, 400);
     });
 
-    $(".info-prop.left").each(function(i, itemElem)
+    $(".info-prop.left, .name-table.left").each(function(i, itemElem)
     {
         itemElem.style.visibility = "hidden";
     });

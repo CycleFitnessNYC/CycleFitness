@@ -9,62 +9,100 @@
   <link rel="stylesheet" href="css/cards.css" media="screen" type="text/css" />
   <link rel="stylesheet" href="css/switch.css" media="screen" type="text/css" />
   <link rel="stylesheet" href="css/tooltip.css" media="screen" type="text/css" />
+  <link rel="stylesheet" href="css/combobox.css" media="screen" type="text/css" />
 
 </head>
 
 <body>
 
-  <button></button>
-  <div class="row" id="title">
-    <h1 style="text-align: center">BIKE COMPARER</h1>
+  <div id="wrapper" style="min-height: 100%">
+    <div class="row" id="header">
+    <h1 style="text-align: center">BIKES</h1>
   </div>
-  <div class="row" id="content">
+    <div class="row" id="content">
     <div id="content-wrapper">
       <div id="content-column">
-        <div class="info">
-          <div class="subinfo container left" id="si1">
-            <div style="width: 100%; height: 180px;">
-              <div class="slot container left" id="s1"></div>
-              <div class="info-prop name-table left" id="name1">
-                <div class="info-prop name">
-                  <div>Drag Bike Here</div>
-                </div>
-              </div>
-            </div>
-            <div class="info-prop bike-info left">
-              <div class="info-prop left" id="type1">Type:</div><br>
-              <div class="info-prop left" id="year1">Year:</div><br>
-              <div class="info-prop left" id="price1">Price:</div><br>
-              <div class="info-prop left" id="desc1">Description:</div>
-            </div>
-          </div>
-          <div class="subinfo container" id="si2">
-            <div style="width: 100%; height: 180px;">
-              <div class="slot container right" id="s2"></div>
-              <div class="info-prop name-table right" id="name2">
-                <div class="info-prop name">
-                  <div>Drag Bike Here</div>
-                </div>
-              </div>
-            </div>
-            <div class="info-prop bike-info left">
-
-            </div>
+        <div id="info-toolbox">
+          <div class="switch">
+            <input type="radio" class="switch-input" name="view" value="single" id="single" checked>
+            <label for="single" class="switch-label switch-label-off noselect">Single</label>
+            <input type="radio" class="switch-input" name="view" value="compare" id="compare">
+            <label for="compare" class="switch-label switch-label-on noselect">Compare</label>
+            <span class="switch-selection"></span>
           </div>
         </div>
-        <div class="switch">
-          <input type="radio" class="switch-input" name="view" value="single" id="single">
-          <label for="single" class="switch-label switch-label-off noselect">Single</label>
-          <input type="radio" class="switch-input" name="view" value="compare" id="compare" checked>
-          <label for="compare" class="switch-label switch-label-on noselect">Compare</label>
-          <span class="switch-selection"></span>
+        <div class="info">
+          <div class="subinfo container left" id="si1">
+            <div id="left-slot-column">
+              <div class="slot container left" id="s1"></div>
+            </div>
+            <div class="subinfo-content-wrapper">
+              <div id="left-name-column">
+                <div class="name-table left" id="name1">
+                  <div class="name">
+                    <div>Drag Bike Here</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="info-prop bike-info left">
+              <div class="info-prop type left" id="type-left"><span class="prop-name">Type:</span><span class="value"></span></div><br>
+              <div class="info-prop year left" id="year-left"><span class="prop-name">Year:</span><span class="value"></span></div><br>
+              <div class="info-prop price left" id="price-left"><span class="prop-name">Price:</span><span class="value"></span></div><br>
+              <div class="info-prop desc left" id="desc-left"><span class="prop-name">Description:</span><span class="value"></span></div>
+            </div>
+          </div>
+          <div class="subinfo container right" id="si2">
+            <div id="right-slot-column">
+              <div class="slot container right" id="s2"></div>
+            </div>
+            <div class="subinfo-content-wrapper">
+              <div id="right-name-column">
+                <div class="name-table right" id="name2">
+                  <div class="name">
+                    <div>Drag Bike Here</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="info-prop bike-info right">
+              <div class="info-prop type right" id="type-right"><span class="prop-name">Type:</span><span class="value"></span></div><br>
+              <div class="info-prop year right" id="year-right"><span class="prop-name">Year:</span><span class="value"></span></div><br>
+              <div class="info-prop price right" id="price-right"><span class="prop-name">Price:</span><span class="value"></span></div><br>
+              <div class="info-prop desc right" id="desc-right"><span class="prop-name">Description:</span><span class="value"></span></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
     <div id="left-column">
+      <div id="packery-toolbox">
+        <div class="styled-select">
+          <select>
+            <option selected value="0">Electric Bikes</option>
+            <option value="1">Women's Bikes</option>
+            <option value="2">Children's Bikes</option>
+            <option value="3">Folding Bikes</option>
+            <option value="4">Road Bikes</option>
+            <option value="5">Cyclocross Bikes</option>
+            <option value="6">Mountain Bikes</option>
+          </select>
+          <div class="select-button"><div class="small-arrow-down"></div></div>
+        </div>
+      </div>
       <div class="packery"></div>
     </div>
+    <div style="clear:both;"></div>
   </div>
+    <div class="row" id="footer">
+    <div class="footer-table">
+      <div class="footer-text">
+        This is a footer
+      </div>
+    </div>
+  </div>
+  </div>
+
   <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
   <script src='js/packery.pkgd.js'></script>
   <script src='js/draggabilly.pkgd.js'></script>
