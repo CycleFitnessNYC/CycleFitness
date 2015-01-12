@@ -1,3 +1,5 @@
+var state = true;
+
 $(function()
 {
     $(".subinfo.left")[0].style.width = "0%";
@@ -7,6 +9,7 @@ $(function()
 
 $("#compare").click(function()
 {
+    state = false;
     $(".container.left").each(function(i, itemElem)
     {
         console.log("mwidth: " + itemElem.style.maxWidth);
@@ -18,7 +21,8 @@ $("#compare").click(function()
     {
         setTimeout(function ()
         {
-            itemElem.style.visibility = "visible";
+            if (state == false)
+                itemElem.style.visibility = "visible";
         }, 400);
 
     });
@@ -28,6 +32,8 @@ $("#compare").click(function()
 
 $("#single").click(function()
 {
+    state = true;
+
     //Replace slot 1 card if necessary
     var itemElem = $("#s1")[0].childNodes[0];
     if (itemElem)
