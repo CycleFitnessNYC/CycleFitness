@@ -1,0 +1,158 @@
+h1
+{
+    text-align: center;
+}
+.menu-icon
+{
+    display: inline;
+}
+
+.slide-out {
+    transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    -webkit-transition: all 200ms ease-in;
+
+    padding-top: 1em;
+    width: 20em;
+    position: absolute;
+    top: 0;
+    left: -20em;
+    height: 100%;
+    background-color: #555;
+    z-index: 100;
+}
+.slide-out a{
+    color:#fff;
+    text-decoration:none;
+    font-size:1.3em;
+}
+.so-nav {
+    margin: 0;
+    padding: 2em 0 0;
+    list-style: none;
+}
+.so-nav a{
+    padding:.5em 1em;
+    display:block;
+}
+#content {
+    position: relative;
+    left: 0;
+}
+#content, #footer
+{
+    transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    -webkit-transition: all 200ms ease-in;
+}
+
+#title-table
+{
+    height: 100%;
+    display: inline-table;
+    margin-bottom: 0px;
+    float: left;
+    margin-left: 10px;
+    transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    -webkit-transition: all 200ms ease-in;
+}
+
+.so-open #title-table
+{
+    margin-left: -30px;
+}
+
+#title-cell
+{
+    display: table-cell;
+    color: #fff;
+    vertical-align: middle;
+
+}
+
+.main-header{
+    background-color:#D2625F;
+    padding:.5em;
+    height:3em;
+}
+
+.menu-icon {
+    position: relative;
+    margin-top: .75em;
+    z-index: 200;
+    left: 0;
+    width: 2em;
+    height: 2em;
+    display: inline-block;
+    float: left;
+    transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    -webkit-transition: all 200ms ease-in;
+}
+
+.menu-icon span, span::before, span::after{
+    position:relative;
+    width:2em;
+    height:.3em;
+    background-color:#fff;
+    display:block;
+    transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    -webkit-transition: all 200ms ease-in;
+}
+
+.menu-icon .menu-icon {
+    top: .6em;
+    transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    -webkit-transition: all 200ms ease-in;
+}
+.menu-icon span:before, .menu-icon span:after{
+    content:"";
+}
+
+.menu-icon span:before{
+     top:-.6em;
+}
+
+.menu-icon span:after{
+     top:.35em;
+}
+
+.inner-content{
+    padding:0 1em;
+}
+
+.so-open .slide-out{
+  left:0;
+}
+
+.so-open #content, .so-open #footer{
+  margin-left:20em;
+}
+.so-open .menu-icon {
+  left: -3em;
+}
+
+.so-open #middle-bar {
+    height: 0;
+}
+
+.so-open .menu-icon :before{
+   top:0;
+   -webkit-transform: rotate3d(0, 0, 1, -45deg);
+   transform: rotate3d(0, 0, 1, -45deg);
+}
+
+.so-open .menu-icon :after{
+   top:-.26em;
+   -webkit-transform: rotate3d(0, 0, 1, 45deg);
+   transform: rotate3d(0, 0, 1, 45deg);
+}

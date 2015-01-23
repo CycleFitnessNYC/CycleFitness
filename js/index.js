@@ -16,7 +16,7 @@ var bikeTypes =
   ROAD: 4,
   CYCLOCROSS: 5,
   MOUNTAIN: 6
-}
+};
 
 $(function()
 {
