@@ -1,7 +1,16 @@
-menuClick(".js-so-menu");
+var open = false;
 
-function menuClick(target){
-    $(target).click(function(){
-        $(".js-wrapper").toggleClass("so-open");
-    });
-}
+$("#content").click(function()
+{
+    if (open)
+    {
+        $(".js-wrapper").removeClass("so-open");
+        setTimeout(function(){open = false;}, 200);
+    }
+});
+
+$(".js-so-menu").click(function()
+{
+    $(".js-wrapper").toggleClass("so-open");
+    setTimeout(function(){open = !open;}, 200);
+});

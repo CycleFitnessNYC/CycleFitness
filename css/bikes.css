@@ -1,0 +1,207 @@
+#left-column
+{
+    float: left;
+    width: 506px;
+    margin-left: -100%;
+}
+
+#content-wrapper
+{
+    float: left;
+    width: 100%;
+}
+
+#content-column
+{
+    margin-left: 506px;
+}
+
+.packery
+{
+    background: hsla(0, 0%, 0%, .05);
+    border: solid 1px #666666;
+    margin: 9px;
+    border-radius: 10px;
+    box-shadow:
+    inset 0px -1px 5px rgba(255,255,255,0.8), /*bottom internal shadow*/
+    inset 0px 1px 5px rgba(0,0,0,0.5); /*top internal highlight*/
+}
+
+/* clearfix */
+.packery:after
+{
+    content: ' ';
+    display: block;
+    clear: both;
+}
+
+.slot
+{
+    margin: 10px;
+    width: 160px;
+    max-width: 160px;
+    height: 160px;
+    background: hsla(0, 0%, 0%, .05);
+    border-radius: 10px;
+    border: solid 1px #666666;
+    box-shadow:
+    inset 0px -1px 5px rgba(255,255,255,0.8), /*bottom internal shadow*/
+    inset 0px 1px 5px rgba(0,0,0,0.5); /*top internal highlight*/
+}
+
+#s1
+{
+    float: right;
+}
+
+#s2
+{
+    float:left;
+}
+
+.left
+{
+    -o-transition: width .4s ease;
+    -moz-transition: width .4s ease;
+    -webkit-transition: width .4s ease;
+    transition: width .4s ease;
+    float: right;
+}
+
+.right
+{
+    float: left;
+}
+
+.info
+{
+    display: flex;
+    border-radius: 10px;
+    margin: 10px;
+    /*box-shadow:
+    inset 0px -1px 1px rgba(255,255,255,0.8), /*bottom internal shadow
+    inset 0px 1px 1px rgba(0,0,0,0.5); /*top internal highlight*/
+}
+
+.subinfo
+{
+    border-radius: 10px;
+    border: solid 1px #666666;
+    width: 50%;
+    height: 100%;
+    max-height: 180px;
+    background: hsla(0, 0%, 0%, .05);
+    -o-transition: width .5s ease, height .5s ease;
+    -moz-transition: width .5s ease, height .5s ease;
+    -webkit-transition: width .5s ease, height .5s ease;
+    transition: width .5s ease, height .5s ease;
+    box-shadow:
+    inset 0px -1px 5px rgba(255,255,255,0.8), /*bottom internal highlight*/
+    inset 0px 1px 5px rgba(0,0,0,0.5); /*top internal shadow*/
+}
+
+.subinfo.left
+{
+    width: 50%;
+}
+
+.subinfo.right
+{
+    width: 100%;
+}
+
+.container.left
+{
+    border-style: none;
+}
+
+.subinfo-content-wrapper
+{
+    width: 100%;
+    height: 180px;
+}
+
+#left-name-column
+{
+    margin-right: 180px;
+}
+
+#left-slot-column
+{
+    width: 180px;
+    float: right;
+    margin-left: -100%;
+}
+
+#right-name-column
+{
+    margin-left: 180px;
+}
+
+#right-slot-column
+{
+    width: 180px;
+    float: left;
+    margin-right: -100%;
+}
+
+.name-table
+{
+    height: 180px;
+    max-width: 90%;
+    display: table;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.name-table.left
+{
+
+}
+
+.name
+{
+    display: table-cell;
+    height: 180px;
+    font-size: xx-large;
+    vertical-align: middle;
+}
+
+.bike-info
+{
+    float: left;
+    visibility: hidden;
+    margin-bottom: 10px;
+}
+
+.info-prop
+{
+    font-size: x-large;
+    margin-left: 2%;
+    width: 96%;
+    float: left;
+}
+
+span.value
+{
+    margin-left: 10px;
+    line-height: 1;
+    font-size: medium;
+
+}
+
+#info-toolbox
+{
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 45px;
+    border-radius: 10px;
+    border: solid 1px #666666;
+}
+
+#packery-toolbox
+{
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 45px;
+}

@@ -42,7 +42,7 @@
 
 .switch-input:checked + .switch-label {
     font-weight: bold;
-    color: rgba(0, 0, 0, 1);
+    color: rgb(255, 255, 255);
     text-shadow: 0 1px rgba(255, 255, 255, 0.25);
     -webkit-transition: 0.15s ease-out;
     -moz-transition: 0.15s ease-out;
