@@ -351,6 +351,7 @@ function getBike(type, id)
 
 $(".styled-select select").change(function()
 {
+  console.log(bikeInfo);
   initPackery(parseInt($(".styled-select select option:selected")[0].value));
 });
 
