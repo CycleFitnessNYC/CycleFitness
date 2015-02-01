@@ -34,7 +34,7 @@ $(function()
 
   if(!succeeded)
   {
-    $.getJSON("/CycleFitness/json/bikeinfo.json", function(data) {
+    $.getJSON("/cyclefitness/json/bikeinfo.json", function(data) {
       console.log(data);
       bikeInfo = data;
       succeeded = true;

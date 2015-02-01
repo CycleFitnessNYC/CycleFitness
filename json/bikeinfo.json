@@ -1,7 +1,7 @@
 ﻿{
 	"bikes":
 	[
-		[//0: Electric
+		[
 			{
 				"name": "Electra Townie Go!",
 				"year": "2015",
@@ -83,7 +83,7 @@
 				"type": "Electric"
 			}
 		],
-		[//1: Women's
+		[
 			{
 				"name": "Liv Avail Advanced SL 0 - Women's",
 				"year": "2015",
@@ -181,7 +181,7 @@
 				"type": "Women's"
 			}
 		],
-		[//2: Children's
+		[
 			{
 				"name": "Specialized Boy's Hotrock 20 (6-Speed)",
 				"year": "2015",
@@ -279,7 +279,7 @@
 				"type": "Children's"
 			}
 		],
-		[//3: Folding
+		[
 			{
 				"name": "Boardwalk D8",
 				"year": "2014",
@@ -313,7 +313,7 @@
 				"type": "Folding"
 			}
 		],
-		[//4: Road
+		[
 			{
 				"name": "Giant Defy 3",
 				"year": "2014",
@@ -419,7 +419,7 @@
 				"type": "Road"
 			}
 		],
-		[//5: Cyclocross
+		[
 			{
 				"name": "Giant Revolt 2",
 				"year": "2014",
@@ -517,7 +517,7 @@
 				"type": "Cyclocross"
 			}
 		],
-		[//6: Mountain
+		[
 			{
 				"name": "Giant Anthem X 29er 1",
 				"year": "2014",

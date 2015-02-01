@@ -18,7 +18,6 @@
 #text-box
 {
     vertical-align: middle;
-    height: 50%;
     width:50%;
     background: rgba(0,0,0,.75);
     position:absolute;
@@ -31,5 +30,18 @@
     text-align:center;
     color:white;
     border-radius: 10px;
-    font-size:20px;
+    font-size:2em;
+}
+
+#twit-image
+{
+    width: 2em;
+    height: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: .5em;
+    background-image: url("/cyclefitness/img/twitter.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center center;
 }

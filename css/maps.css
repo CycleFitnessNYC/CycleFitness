@@ -1,0 +1,14 @@
+.map-div
+{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    width: 55em;
+    height: 40em;
+    border-radius: 10px;
+}
+
+#gmap_canvas img
+{
+    max-width:none!important;background:none!important
+}
