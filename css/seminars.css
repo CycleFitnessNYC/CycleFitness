@@ -1,11 +1,8 @@
 #text
 {
-    margin-left: 30%;
-    margin-right: 30%;
-}
-
-p
-{
+    margin-left: auto;
+    margin-right: auto;
+    width: 20em;
     font-size: 1.5em;
-    text-align: center;
+    text-align: left;
 }

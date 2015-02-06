@@ -1,9 +1,9 @@
 function init_map()
 {
     var myOptions = {zoom:14,center:new google.maps.LatLng(40.7543922,-73.9197439),mapTypeId: google.maps.MapTypeId.ROADMAP};
-    map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
-    marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(40.7543922, -73.9197439)});
-    infowindow = new google.maps.InfoWindow({content:"<b>Cycle Fitness</b><br/> 3455 42nd Street<br/> New York, NY" });
+    var map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
+    var marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(40.7543922, -73.9197439)});
+    var infowindow = new google.maps.InfoWindow({content:"<b>Cycle Fitness</b><br/> 3455 42nd Street<br/> New York, NY" });
     google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);});
     infowindow.open(map,marker);
 
@@ -13,10 +13,18 @@ function init_map()
 function animateIcon(line) {
     var count = 0;
     window.setInterval(function() {
-        count = (count + 1) % 200;
-
         var icons = line.get('icons');
-        icons[0].offset = (count / 2) + '%';
+        icons.forEach(function(icon, index)
+        {
+            if (index != 0)
+            {
+                var num = icon.offset = parseFloat(icon.offset) + .5;
+                if (num > 100)
+                    num = 0;
+                icon.offset = num + "%";
+            }
+        });
+
         line.set('icons', icons);
     }, 20);
 }
@@ -33,7 +41,7 @@ function loadPaths(map)
             var arrow =
             {
                 path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
-                scale: 2,
+                scale: 3,
                 strokeColor: pathInfo.color
             };
             var startPoint =
@@ -47,17 +55,13 @@ function loadPaths(map)
             var pathCoords = [];
             pathInfo.pathCoords.forEach(function(elem, index)
             {
-               pathCoords[index] = new google.maps.LatLng(elem.x, elem.y);
+               pathCoords[index] = new google.maps.LatLng(elem[0], elem[1]);
             });
 
             var path = new google.maps.Polyline({
                 path: pathCoords,
                 icons:
                     [
-                        {
-                            icon: arrow,
-                            offset: '100%'
-                        },
                         {
                             icon:startPoint,
                             offset: '0%'
@@ -66,7 +70,28 @@ function loadPaths(map)
                 geodesic: true,
                 strokeColor: pathInfo.color,
                 strokeOpacity: 1.0,
-                strokeWeight: 2
+                strokeWeight: 4
+            });
+
+            var numArrows = 1;
+            for (var i = 1; i <= numArrows; i++)
+            {
+                path.icons[path.icons.length] =
+                {
+                    icon: arrow,
+                    offset: (100 / numArrows) * i + "%"
+                };
+            }
+
+            var infowindow = new google.maps.InfoWindow({content:"<b>" + pathInfo.name + "</b><br/>Distance: " + pathInfo.distance + "<br/>Time: " + pathInfo.time});
+            google.maps.event.addListener(path, "click", function(event)
+            {
+                var marker = new google.maps.Marker({map: map, position: event.latLng});
+                infowindow.open(map, marker);
+                google.maps.event.addListener(infowindow, "closeclick", function()
+                {
+                    marker.setMap(null);
+                });
             });
 
             animateIcon(path);
