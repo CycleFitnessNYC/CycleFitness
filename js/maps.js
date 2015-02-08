@@ -83,7 +83,7 @@ function loadPaths(map)
                 };
             }
 
-            var infowindow = new google.maps.InfoWindow({content:"<b>" + pathInfo.name + "</b><br/>Distance: " + pathInfo.distance + "<br/>Time: " + pathInfo.time});
+            var infowindow = new google.maps.InfoWindow({content:"<b>" + pathInfo.name + "</b><br/>Distance: " + pathInfo.distance + "<br/>Time: " + pathInfo.time + "<br/><a href='calendar.html'>Schedule</a>"});
             google.maps.event.addListener(path, "click", function(event)
             {
                 var marker = new google.maps.Marker({map: map, position: event.latLng});
