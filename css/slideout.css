@@ -175,3 +175,10 @@
    -webkit-transform: rotate3d(0, 0, 1, 45deg);
    transform: rotate3d(0, 0, 1, 45deg);
 }
+#fb-title
+{
+    visibility: hidden;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 0px;
+}

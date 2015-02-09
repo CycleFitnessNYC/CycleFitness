@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Cycle Fitness</title>
+  <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+  <link rel="stylesheet" href="css/slideout-fb.css" media="screen" type="text/css" />
+  <link rel="stylesheet" href="css/bikes-fb.css" media="screen" type="text/css" />
+  <link rel="stylesheet" href="css/combobox.css" media="screen" type="text/css" />
+
+</head>
+
+<body>
+
+<div class="js-wrapper" id="wrapper" style="min-height: 100%">
+
+  <div class="row noselect" id="header"></div>
+  <div class="row" id="content">
+    <header class="main-header noselect">
+      <a href="#" class="menu-icon js-so-menu">
+        <span id="middle-bar"></span>
+      </a>
+      <div id="title-table">
+        <p id="title-cell">Cycle Fitness</p>
+      </div>
+    </header>
+    <h1>Bikes</h1>
+    <div class="column" id="left-column">
+      <div class="styled-select">
+        <select>
+          <option selected value="0">Electric Bikes</option>
+          <option value="1">Women's Bikes</option>
+          <option value="2">Children's Bikes</option>
+          <option value="3">Folding Bikes</option>
+          <option value="4">Road Bikes</option>
+          <option value="5">Cyclocross Bikes</option>
+          <option value="6">Mountain Bikes</option>
+        </select>
+        <div class="select-button"><div class="small-arrow-down"></div></div>
+      </div>
+      <ul id="bike-list"></ul>
+    </div>
+
+    <div class="column" id="right-column">
+      <h2 id="name">Select bike to see info</h2>
+      <p id="type">Type:</p>
+      <p id="year">Year:</p>
+      <p id="price">Price:</p>
+      <p id="desc">Description:</p>
+      <div id="image"></div>
+    </div>
+
+    <div style="clear:both;"></div>
+  </div>
+  <div class="row" id="footer"></div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>var pageNo = 1;</script>
+<script src="js/headerfooter.js"></script>
+<script src="js/slideout.js"></script>
+<script src="js/bikes-fb.js"></script>
+</body>
+
+</html>

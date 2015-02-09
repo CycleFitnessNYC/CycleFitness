@@ -1,0 +1,47 @@
+.column
+{
+    width: 48%;
+    display: inline-block;
+    margin-left: 1%;
+    margin-bottom: 10px;
+    float: left;
+}
+
+#bike-list li
+{
+    display: block;
+    vertical-align: middle;
+}
+
+#bike-list a
+{
+    display: block;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    border-top: 3px solid transparent;
+    font-size: 20px;
+    color: #000;
+}
+
+#bike-list a:hover
+{
+    background-color: #D2625F;
+}
+
+#right-column h2
+{
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+#image
+{
+    width: 160px;
+    height: 160px;
+    background: #f0f0f0;
+    border: 2px solid #333;
+    border-color: hsla(0, 0%, 0%, 0.3);
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -1,0 +1,59 @@
+.so-nav
+{
+    position: relative;
+    font-size: 0;
+    background-color: #D2625F;
+}
+.so-nav
+{
+    padding-left: 0px;
+}
+
+.so-nav li
+{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.so-nav a
+{
+    display: block;
+    text-decoration: none;
+    padding: 15px 25px 10px 25px;
+    border-bottom: 3px solid transparent;
+    border-top: 3px solid transparent;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.so-nav a:hover
+{
+    border-color: #733735;
+    background: #a45656;
+}
+
+.so-nav #current-page
+{
+    border: solid 2px #a45656;
+}
+
+#title-cell, #title
+{
+    visibility: hidden;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 0px;
+}
+
+#fb-title
+{
+    padding-left: 15px;
+    color: white;
+    font-size: 20px;
+    background-color: #D2625F;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-bottom-width: 0px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
