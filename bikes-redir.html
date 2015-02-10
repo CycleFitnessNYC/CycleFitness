@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+<!-- Redirects to appropriate bikes page based on browser -->
+    <script>
+        if (supportsTransitions())
+            window.location.replace("bikes-cards.html");
+        else
+            window.location.replace("bikes-list.html");
+
+        function supportsTransitions() {
+            var b = document.body || document.documentElement,
+                    s = b.style,
+                    p = 'transition';
+
+            if (typeof s[p] == 'string') { return true; }
+
+            // Tests for vendor specific prop
+            var v = ['Moz', 'webkit', 'Webkit', 'Khtml', 'O', 'ms'];
+            p = p.charAt(0).toUpperCase() + p.substr(1);
+
+            for (var i=0; i<v.length; i++) {
+                if (typeof s[v[i] + p] == 'string') { return true; }
+            }
+
+            return false;
+        }
+    </script>
+</body>
+</html>
