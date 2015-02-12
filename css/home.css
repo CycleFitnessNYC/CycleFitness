@@ -15,13 +15,12 @@
     border-radius: 10px;
 }
 
-#text-box
+#text-box, #text-box2
 {
     vertical-align: middle;
     width:50%;
     background: rgba(0,0,0,.75);
     position:absolute;
-    top:10%;
     left:25%;
     display:inline-block;
     -webkit-box-sizing:border-box;
@@ -30,18 +29,47 @@
     text-align:center;
     color:white;
     border-radius: 10px;
-    font-size:2em;
+}
+
+#text-box
+{
+    top: 10%;
+    font-size:1.75em;
+}
+
+#text-box2
+{
+    bottom: 2%;
+    font-size:1.2em;
+}
+
+a:link
+{
+    text-decoration: none;
 }
 
 #twit-image
 {
-    width: 2em;
-    height: 2em;
-    margin-left: auto;
-    margin-right: auto;
+    width: 3em;
+    height: 3em;
     margin-bottom: .5em;
     background-image: url("/cyclefitness/img/twitter.png");
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center center;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+#face-image
+{
+    width: 3em;
+    height: 3em;
+    margin-bottom: .5em;
+    background-image: url("/cyclefitness/img/facebook.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center center;
+    display: inline-block;
+    margin-left: 5px;
 }

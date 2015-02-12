@@ -14,6 +14,16 @@ body
   margin: 0;
 }
 
+body
+{
+  background: url(../img/pearl-background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-width: 1280px;
+}
+
 h1:not(#homeh1)
 {
   margin-top: 5px;
@@ -30,16 +40,6 @@ h1:not(#homeh1)
 h1:not(#homeh1):hover
 {
   background: rgba(1,1,1,.75);
-}
-
-body
-{
-  background: url(../img/pearl-background.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  min-width: 1300px;
 }
 
 #wrapper
@@ -66,14 +66,19 @@ body
 {
   background: hsla(0, 0%, 0%, 0.80);
   height: 90px;
-  width: 99%;
-  border-radius: 10px;
-  margin-left: .5%;
-  margin-bottom: 10px;
+  width: 100%;
   position: absolute;
   bottom: 0;
   left: 0;
+  background: rgba(1,1,1,.75);
+  transition: ease all 200ms;
 }
+
+#footer:not(#homeh1):hover
+{
+  background: rgba(1,1,1,.9);
+}
+
 
 .footer-table
 {
@@ -98,4 +103,26 @@ body
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+a:link
+{
+  color: orange;
+}
+
+a:visited
+{
+  color: #cb0a08;
+}
+
+a:active {
+  color: #d8631d;
+}
+
+::-moz-selection { /* Code for Firefox */
+  background: #d8631d;
+}
+
+::selection {
+  background: #d8631d;
 }

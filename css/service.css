@@ -84,3 +84,10 @@
     float: bottom;
     color: #313131;
 }
+
+#repairs
+{
+    font-size: 1.5em;
+    text-align: center;
+    width: 100%;
+}
