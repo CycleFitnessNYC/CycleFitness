@@ -57,20 +57,18 @@ h1:not(#homeh1):hover
 #content
 {
   width: 100%;
-  padding-bottom: 90px;
+  padding-bottom: 110px;
 }
-
-
 
 #footer
 {
-  background: hsla(0, 0%, 0%, 0.80);
-  height: 90px;
   width: 100%;
   position: absolute;
+  margin-top: 10px;
   bottom: 0;
   left: 0;
   background: rgba(1,1,1,.75);
+  color: aliceblue;
   transition: ease all 200ms;
 }
 
@@ -79,21 +77,6 @@ h1:not(#homeh1):hover
   background: rgba(1,1,1,.9);
 }
 
-
-.footer-table
-{
-  height: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  display: table;
-}
-
-.footer-text
-{
-  color: aliceblue;
-  vertical-align: middle;
-  display: table-cell;
-}
 
 .noselect
 {
@@ -115,7 +98,8 @@ a:visited
   color: #cb0a08;
 }
 
-a:active {
+a:active
+{
   color: #d8631d;
 }
 
@@ -125,4 +109,27 @@ a:active {
 
 ::selection {
   background: #d8631d;
+}
+
+#company
+{
+  border-right: dashed #ffffff 1px;
+}
+
+.subfooter
+{
+  width: 49%;
+  height: 100%;
+  line-height: .5;
+  display: inline-block;
+}
+
+.subfooter a:link, .subfooter a:visited, .subfooter a:active
+{
+  color: aliceblue;
+}
+
+.subfooter a
+{
+  text-decoration: none;
 }

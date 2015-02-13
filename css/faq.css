@@ -7,12 +7,15 @@
     text-align: left;
 }
 
-.faq-c {
+.faq-c
+{
     border-bottom: 1px dotted #ccc;
     padding: 1em 0;
+    cursor: pointer;
 }
 
-.faq-t {
+.faq-t
+{
     line-height: 1em;
     color: #aaa;
     font-family: sans-serif;
@@ -24,7 +27,8 @@
     transition: all 200ms;
 }
 
-.faq-o {
+.faq-o
+{
     transform: rotate(-45deg);
     transform-origin: 50% 50%;
     -ms-transform: rotate(-45deg);
@@ -36,13 +40,14 @@
     transition: all 200ms;
 }
 
-.faq-q {
-    cursor: pointer;
+.faq-q
+{
     font-size: 1.5em;
     font-weight: 100;
 }
 
-.faq-a {
+.faq-a
+{
     clear: both;
     color: #666;
     display: none;
