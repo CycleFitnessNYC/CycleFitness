@@ -3,7 +3,7 @@
 <body>
 <!-- Redirects to appropriate bikes page based on browser -->
     <script>
-        if (userIsAMonkey())
+        if (!userIsAMonkey())
             window.location.replace("bikes-cards.html");
         else
             window.location.replace("bikes-list.html");
