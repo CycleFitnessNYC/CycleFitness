@@ -3,21 +3,19 @@
 <body>
 <!-- Redirects to appropriate bikes page based on browser -->
     <script>
-        if (supportsTransitions())
+        if (userIsAMonkey())
             window.location.replace("bikes-cards.html");
         else
             window.location.replace("bikes-list.html");
 
-        function supportsTransitions() {
+        function userIsAMonkey() {
             var ua = window.navigator.userAgent;
             var msie = ua.indexOf("MSIE ");
 
-            if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer, return version number
-                alert(parseInt(ua.substring(msie + 5, ua.indexOf(".", msie))));
-            else                 // If another browser, return 0
-                alert('otherbrowser');
-
-            return false;
+            if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // The user is using IE, and thus is a monkey
+                return true;
+            else                 // The user is not a monkey
+                return false;
         }
     </script>
 </body>
